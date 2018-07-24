@@ -17,6 +17,11 @@ namespace Rock_Paper_Scissors
         {
             Console.WriteLine("What is your name?");
             name = Console.ReadLine();
+            Console.WriteLine("Welcome " + name + " to the game!");
+        }
+        public void SetUpTwoPlayerGame()
+        {
+
         }
     }
 }

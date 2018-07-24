@@ -11,6 +11,7 @@ namespace Rock_Paper_Scissors
         //member variables
         Player playerOne;
         Player playerTwo;
+        Player setUpGame;
         Rule rules;
 
 
@@ -33,11 +34,15 @@ namespace Rock_Paper_Scissors
             {
                 Console.WriteLine("You have set up a game against another person! Good luck and have fun!");
                 playerTwo = new Human();
+                playerTwo.GetPlayerName();
+                setUpGame = new Human();
+                setUpGame.DisplayListOfGesutres();
             }
             else if(userChoice.ToLower() == "no")
             {
-                Console.WriteLine("You are now playing against an AI!");
+
                 playerTwo = new AI();
+                playerTwo.GetPlayerName();
             }
             else
             {
