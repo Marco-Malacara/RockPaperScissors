@@ -6,7 +6,22 @@ using System.Threading.Tasks;
 
 namespace Rock_Paper_Scissors
 {
-    class Player
+    public abstract class Player
     {
+        //member variables (HAS A)
+        protected string name;
+
+
+        //constructor
+        public Player()
+        {
+
+        }
+
+        //member methods (CAN DO)
+        public virtual void GetPlayerName()
+        {
+            name = "Lerroy Jankins!";
+        }
     }
 }

@@ -10,6 +10,8 @@ namespace Rock_Paper_Scissors
     {
         static void Main(string[] args)
         {
+            Game RockPaperSpock = new Game();
+            RockPaperSpock.MainMenu();
         }
     }
 }

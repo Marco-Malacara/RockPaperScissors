@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace Rock_Paper_Scissors
 {
-    class AI
+    class AI : Player
     {
+        //member vairables
+
+        //member constructor
+        
+        //member methods
+        public override void GetPlayerName()
+        {
+            base.GetPlayerName();
+        }
     }
 }

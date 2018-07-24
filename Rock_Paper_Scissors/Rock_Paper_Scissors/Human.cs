@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace Rock_Paper_Scissors
 {
-    class Human
+    class Human : Player
     {
+        //member variables
+
+        //member constructor
+
+        //member methods
+        public override void GetPlayerName()
+        {
+            Console.WriteLine("What is your name?");
+            name = Console.ReadLine();
+        }
     }
 }
