@@ -9,7 +9,7 @@ namespace Rock_Paper_Scissors
     class Game
     {
         //member variables
-        Human playerOne;
+        Player playerOne;
         Player playerTwo;
         // Player setUpGame;
         Rule rules;
@@ -34,7 +34,7 @@ namespace Rock_Paper_Scissors
             {
                 Console.WriteLine("You have set up a game against another person! Good luck and have fun!");
                 playerTwo = new Human();
-                playerOne.PlayerVsPlayerGame();
+                playerOne.StartGame(); ;
                 
             }
             else if(userChoice.ToLower() == "2")
@@ -51,18 +51,18 @@ namespace Rock_Paper_Scissors
         }
         public void MainMenu()
         {
-            Console.WriteLine("Press [1] to see game rules.");
-            Console.WriteLine("Press [2] to set up opponent!");
+            Console.WriteLine("Press [1] to choose game!");
+            Console.WriteLine("Press [2] to see rules!");
 
             string userInput = Console.ReadLine();
 
             switch (userInput)
             {
                 case "1":
-                    rules.DisplayRules();
+                    SetUpOpponent();
                     break;
                 case "2":
-                    SetUpOpponent();
+                    rules.DisplayRules();
                     break;
             }
             MainMenu();

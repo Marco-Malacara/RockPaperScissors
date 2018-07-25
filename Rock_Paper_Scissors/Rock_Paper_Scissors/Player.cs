@@ -34,7 +34,7 @@ namespace Rock_Paper_Scissors
             gestures.Add("Lizard");
             gestures.Add("Spock");
 
-            foreach(string gesture in gestures)
+            foreach (string gesture in gestures)
             {
                 Console.WriteLine(gesture);
             }
@@ -42,6 +42,10 @@ namespace Rock_Paper_Scissors
         public virtual void PlayerTwoInput()
         {
             Console.WriteLine("Player Two's turn!");
+        }
+        public virtual void StartGame()
+        {
+            Console.WriteLine("If you're seeing this; the game broke...sorry...");
         }
     }
 }
