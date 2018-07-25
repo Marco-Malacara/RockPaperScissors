@@ -38,8 +38,8 @@ namespace Rock_Paper_Scissors
             Console.WriteLine("What would you like to throw?----->");
 
             string playerTwoChoice = Console.ReadLine();
-            
-            if(playerOneChoice.ToLower() == "rock" && playerTwoChoice.ToLower() == "scissors" || playerTwoChoice.ToLower() == "lizard")
+
+            if (playerOneChoice.ToLower() == "rock" && playerTwoChoice.ToLower() == "scissors" || playerTwoChoice.ToLower() == "lizard")
             {
                 Console.Write("ROCK! beats " + playerTwoChoice.ToUpper() + "! Player One Wins!");
             }
@@ -61,12 +61,11 @@ namespace Rock_Paper_Scissors
             }
             else if (playerOneChoice == playerTwoChoice)
             {
-              Console.WriteLine("You both threw " + playerOneChoice.ToUpper() + "! This round is a draw!");
+                Console.WriteLine("You both threw " + playerOneChoice.ToUpper() + "! This round is a draw!");
             }
             else
             {
-                Console.WriteLine("The given input is invalid please try again!");
-                PlayerVsPlayerGame();
+                Console.WriteLine(playerTwoChoice + " beats " + playerOneChoice + "! Player Two Wins!");
             }
         }
     }
