@@ -14,7 +14,7 @@ namespace Rock_Paper_Scissors
         //member constructor
         public Human()
         {
-            playerOneChoice = "No gesture chosen";
+            playerOneChoice = null;
             playerTwoChoice = null;
         }
 
@@ -63,9 +63,43 @@ namespace Rock_Paper_Scissors
             {
                 Console.WriteLine("You both threw " + playerOneChoice.ToUpper() + "! This round is a draw!");
             }
+            else if (playerTwoChoice.ToLower() == "rock" && playerOneChoice.ToLower() == "scissors" || playerOneChoice.ToLower() == "lizard")
+            {
+                Console.Write("ROCK! beats " + playerOneChoice.ToUpper() + "! Player One Wins!");
+            }
+            else if (playerTwoChoice.ToLower() == "scissors" && playerOneChoice.ToLower() == "paper" || playerOneChoice.ToLower() == "lizard")
+            {
+                Console.Write("SCISSORS! beats " + playerOneChoice.ToUpper() + "! Player One Wins!");
+            }
+            else if (playerTwoChoice.ToLower() == "paper" && playerOneChoice.ToLower() == "rock" || playerOneChoice.ToLower() == "spock")
+            {
+                Console.Write("PAPER! beats " + playerOneChoice.ToUpper() + "! Player One Wins!");
+            }
+            else if (playerTwoChoice.ToLower() == "lizard" && playerTwoChoice.ToLower() == "paper" || playerOneChoice.ToLower() == "spock")
+            {
+                Console.Write("LIZARD! beats " + playerTwoChoice.ToUpper() + "! Player One Wins!");
+            }
+            else if (playerTwoChoice.ToLower() == "spock" && playerTwoChoice.ToLower() == "rock" || playerTwoChoice.ToLower() == "scissors")
+            {
+                Console.Write("PAPER beats " + playerTwoChoice.ToUpper() + "! Player One Wins!");
+            }
+            else if (playerOneChoice == playerTwoChoice)
+            {
+                Console.WriteLine("You both threw " + playerOneChoice.ToUpper() + "! This round is a draw!");
+            }
             else
             {
-                Console.WriteLine(playerTwoChoice + " beats " + playerOneChoice + "! Player Two Wins!");
+                Console.WriteLine("The given input is invalid please try again!");
+                PlayerVsPlayerGame();
+            }
+        }
+        public void GetWinner()
+        {
+            int playerOneScore;
+            int playerTwoScore;
+            for(int i = 0; i <=3; i++)
+            {
+
             }
         }
     }
