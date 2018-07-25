@@ -34,7 +34,7 @@ namespace Rock_Paper_Scissors
             {
                 Console.WriteLine("You have set up a game against another person! Good luck and have fun!");
                 playerTwo = new Human();
-                playerOne.PlayerOneInput();
+                playerOne.PlayerVsPlayerGame();
                 
             }
             else if(userChoice.ToLower() == "2")

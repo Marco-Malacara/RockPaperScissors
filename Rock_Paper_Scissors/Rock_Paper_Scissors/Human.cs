@@ -25,7 +25,7 @@ namespace Rock_Paper_Scissors
             name = Console.ReadLine();
             Console.WriteLine("Welcome " + name + " to the game!");
         }
-        public void PlayerOneInput()
+        public void PlayerVsPlayerGame()
         {
             DisplayListOfGesutres();
             Console.WriteLine("Player One picks first!");
@@ -41,15 +41,32 @@ namespace Rock_Paper_Scissors
             
             if(playerOneChoice.ToLower() == "rock" && playerTwoChoice.ToLower() == "scissors" || playerTwoChoice.ToLower() == "lizard")
             {
-                Console.Write("Rock beats " + playerTwoChoice + ".");
+                Console.Write("ROCK! beats " + playerTwoChoice.ToUpper() + "! Player One Wins!");
             }
-            else if (playerOneChoice.ToLower() == "rock" && playerTwoChoice.ToLower() == "scissors")
+            else if (playerOneChoice.ToLower() == "scissors" && playerTwoChoice.ToLower() == "paper" || playerTwoChoice.ToLower() == "lizard")
             {
-                Console.Write("Player One Wins!");
+                Console.Write("SCISSORS! beats " + playerTwoChoice.ToUpper() + "! Player One Wins!");
+            }
+            else if (playerOneChoice.ToLower() == "paper" && playerTwoChoice.ToLower() == "rock" || playerTwoChoice.ToLower() == "spock")
+            {
+                Console.Write("PAPER! beats " + playerTwoChoice.ToUpper() + "! Player One Wins!");
+            }
+            else if (playerOneChoice.ToLower() == "lizard" && playerTwoChoice.ToLower() == "paper" || playerTwoChoice.ToLower() == "spock")
+            {
+                Console.Write("LIZARD! beats " + playerTwoChoice.ToUpper() + "! Player One Wins!");
+            }
+            else if (playerOneChoice.ToLower() == "spock" && playerTwoChoice.ToLower() == "rock" || playerTwoChoice.ToLower() == "scissors")
+            {
+                Console.Write("PAPER beats " + playerTwoChoice.ToUpper() + "! Player One Wins!");
             }
             else if (playerOneChoice == playerTwoChoice)
             {
-              Console.WriteLine("");
+              Console.WriteLine("You both threw " + playerOneChoice.ToUpper() + "! This round is a draw!");
+            }
+            else
+            {
+                Console.WriteLine("The given input is invalid please try again!");
+                PlayerVsPlayerGame();
             }
         }
     }
