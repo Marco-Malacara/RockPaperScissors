@@ -8,27 +8,25 @@ namespace Rock_Paper_Scissors
 {
     class Game
     {
-        //member variables
         Player playerOne;
         Player playerTwo;
-        // Player setUpGame;
+        public string playerOneWon;
         Rule rules;
 
-
-        //constructor 
         public Game()
         {
             playerOne = new Human();
             rules = new Rule();
+            playerOneWon = null;
         }
 
         public void RunRound()
         {
             playerOne.MakeChoice();
             playerTwo.MakeChoice();
+            RoundWinner();
         }
 
-        //member methods
         public void SetUpOpponent()
         {
             Console.WriteLine("Press [1] to play against another Human.");
@@ -40,6 +38,8 @@ namespace Rock_Paper_Scissors
             {
                 Console.WriteLine("You have set up a game against another person! Good luck and have fun!");
                 playerTwo = new Human();
+                playerOne.GetPlayerName();
+                playerTwo.GetPlayerName();
                 RunRound();
                 
             }
@@ -48,7 +48,7 @@ namespace Rock_Paper_Scissors
 
                 playerTwo = new AI();
                 playerTwo.GetPlayerName();
-                playerTwo.StartGame();
+                RunRound();
             }
             else
             {
@@ -75,6 +75,136 @@ namespace Rock_Paper_Scissors
             MainMenu();
 
 
+        }
+        public void RoundWinner()
+        {
+            if (playerOne.choice.ToLower() == "rock" && playerTwo.choice.ToLower() == "scissors" || playerTwo.choice.ToLower() == "lizard")
+            {
+                Console.WriteLine(" ");
+                Console.WriteLine("ROCK! beats " + playerTwo.choice.ToUpper() + "!");
+                Console.WriteLine(" ");
+                playerOneWon = "won";
+            }
+            else if (playerOne.choice.ToLower() == "scissors" && playerTwo.choice.ToLower() == "paper" || playerTwo.choice.ToLower() == "lizard")
+            {
+                Console.WriteLine(" ");
+                Console.WriteLine("SCISSORS! beats " + playerTwo.choice.ToUpper() + "!");
+                Console.WriteLine(" ");
+                playerOneWon = "won";
+            }
+            else if (playerOne.choice.ToLower() == "paper" && playerTwo.choice.ToLower() == "rock" || playerTwo.choice.ToLower() == "spock")
+            {
+                Console.WriteLine(" ");
+                Console.WriteLine("PAPER! beats " + playerTwo.choice.ToUpper() + "!");
+                Console.WriteLine(" ");
+                playerOneWon = "won";
+            }
+            else if (playerOne.choice.ToLower() == "lizard" && playerTwo.choice.ToLower() == "paper" || playerTwo.choice.ToLower() == "spock")
+            {
+                Console.WriteLine(" ");
+                Console.WriteLine("LIZARD! beats " + playerTwo.choice.ToUpper() + "!");
+                Console.WriteLine(" ");
+                playerOneWon = "won";
+            }
+            else if (playerOne.choice.ToLower() == "spock" && playerTwo.choice.ToLower() == "rock" || playerTwo.choice.ToLower() == "scissors")
+            {
+                Console.WriteLine(" ");
+                Console.WriteLine("SPOCK beats " + playerTwo.choice.ToUpper() + "!");
+                Console.WriteLine(" ");
+                playerOneWon = "won";
+            }
+            else if (playerOne.choice == playerTwo.choice)
+            {
+                Console.WriteLine(" ");
+                Console.WriteLine("You both threw " + playerOne.choice.ToUpper() + "! This round is a draw!");
+                Console.WriteLine(" ");
+                playerOneWon = "";
+            }
+            else if (playerTwo.choice.ToLower() == "rock" && playerOne.choice.ToLower() == "scissors" || playerOne.choice.ToLower() == "lizard")
+            {
+                Console.WriteLine(" ");
+                Console.WriteLine("ROCK! beats " + playerOne.choice.ToUpper() + "!");
+                Console.WriteLine(" ");
+                playerOneWon = "no";
+            }
+            else if (playerTwo.choice.ToLower() == "scissors" && playerOne.choice.ToLower() == "paper" || playerOne.choice.ToLower() == "lizard")
+            {
+                Console.WriteLine(" ");
+                Console.WriteLine("SCISSORS! beats " + playerOne.choice.ToUpper() + "!");
+                Console.WriteLine(" ");
+                playerOneWon = "no";
+            }
+            else if (playerTwo.choice.ToLower() == "paper" && playerOne.choice.ToLower() == "rock" || playerOne.choice.ToLower() == "spock")
+            {
+                Console.WriteLine(" ");
+                Console.WriteLine("PAPER! beats " + playerOne.choice.ToUpper() + "!");
+                Console.WriteLine(" ");
+                playerOneWon = "no";
+            }
+            else if (playerTwo.choice.ToLower() == "lizard" && playerTwo.choice.ToLower() == "paper" || playerOne.choice.ToLower() == "spock")
+            {
+                Console.WriteLine(" ");
+                Console.WriteLine("LIZARD! beats " + playerTwo.choice.ToUpper() + "!");
+                Console.WriteLine(" ");
+                playerOneWon = "no";
+            }
+            else if (playerTwo.choice.ToLower() == "spock" && playerTwo.choice.ToLower() == "rock" || playerTwo.choice.ToLower() == "scissors")
+            {
+                Console.WriteLine(" ");
+                Console.WriteLine("SPOCK beats " + playerTwo.choice.ToUpper() + "!");
+                Console.WriteLine(" ");
+                playerOneWon = "no";
+            }
+            else
+            {
+                Console.WriteLine("The given input is invalid please try again!");
+                RoundWinner();
+            }
+            ScoreTracker();
+        }
+        public void ScoreTracker()
+        {
+            while (playerOne.score < 2 && playerTwo.score < 2)
+            {
+
+                if (playerOneWon == "won")
+                {
+                    Console.WriteLine(" ");
+                    Console.WriteLine("Congratulations Player One!");
+                    playerOne.score = playerOne.score + 1;
+                    Console.WriteLine("The score is now Player One = " + playerOne.score + " Player Two = " + playerTwo.score + ".");
+                    Console.WriteLine(" ");
+                    RunRound();
+                }
+                else if (playerOneWon == "no")
+                {
+                    Console.WriteLine(" ");
+                    Console.WriteLine("Congratulations Player Two!");
+                    playerTwo.score = playerTwo.score + 1;
+                    Console.WriteLine("The score is now Player One = " + playerOne.score + " Player Two = " + playerTwo.score + ".");
+                    Console.WriteLine(" ");
+                    RunRound();
+                }
+                else
+                {
+                    Console.WriteLine(" ");
+                    Console.WriteLine("You both drew the same thing! this round is a draw!");
+                    playerTwo.score = playerTwo.score + 1;
+                    playerOne.score = playerOne.score + 1;
+                    Console.WriteLine("The score is now Player One = " + playerOne.score + " Player Two = " + playerTwo.score + ".");
+                    Console.WriteLine(" ");
+                    RunRound();
+
+                }
+            }
+            if (playerOne.score > playerTwo.score)
+            {
+                Console.WriteLine("Congratulations Player One! You are the Winner! Thanks for Playing!");
+            }
+            else
+            {
+                Console.WriteLine("Congratulations Player Two! You are the Winner! Thanks for Playing!");
+            }
         }
     }
 }
