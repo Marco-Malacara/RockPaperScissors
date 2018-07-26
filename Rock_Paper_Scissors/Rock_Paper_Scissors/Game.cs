@@ -22,6 +22,12 @@ namespace Rock_Paper_Scissors
             rules = new Rule();
         }
 
+        public void RunRound()
+        {
+            playerOne.MakeChoice();
+            playerTwo.MakeChoice();
+        }
+
         //member methods
         public void SetUpOpponent()
         {
@@ -34,7 +40,7 @@ namespace Rock_Paper_Scissors
             {
                 Console.WriteLine("You have set up a game against another person! Good luck and have fun!");
                 playerTwo = new Human();
-                playerOne.StartGame(); ;
+                RunRound();
                 
             }
             else if(userChoice.ToLower() == "2")

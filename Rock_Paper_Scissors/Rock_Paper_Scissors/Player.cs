@@ -10,8 +10,9 @@ namespace Rock_Paper_Scissors
     {
         //member variables (HAS A)
         protected string name;
-        public string playerOneChoice;
-        public string playerTwoChoice;
+        public string choice;
+        //public string playerOneChoice;
+        //public string playerTwoChoice;
         public string playerOneWon;
         public int playerOneScore;
         public int playerTwoScore;
@@ -19,10 +20,14 @@ namespace Rock_Paper_Scissors
         //constructor
         public Player()
         {
-            playerOneChoice = null;
-            playerTwoChoice = null;
+            //playerOneChoice = null;
+            //playerTwoChoice = null;
             playerOneWon = null;
+            playerOneScore = 0;
+            playerTwoScore = 0;
         }
+
+        public abstract void MakeChoice();
 
         //member methods (CAN DO)
         public virtual void GetPlayerName()
@@ -51,7 +56,7 @@ namespace Rock_Paper_Scissors
         }
         public void GetWinner()
         {
-            while (playerOneScore < 2 || playerTwoScore < 2)
+            while (playerOneScore < 2 && playerTwoScore < 2)
             {
 
                 if (playerOneWon == "won")
@@ -83,6 +88,14 @@ namespace Rock_Paper_Scissors
                     StartGame();
 
                 }
+            }
+            if(playerOneScore > playerTwoScore)
+            {
+                Console.WriteLine("Congratulations Player One! You are the Winner! Thanks for Playing!");
+            }
+            else
+            {
+                Console.WriteLine("Congratulations Player Two! You are the Winner! Thanks for Playing!");
             }
         }
     }
