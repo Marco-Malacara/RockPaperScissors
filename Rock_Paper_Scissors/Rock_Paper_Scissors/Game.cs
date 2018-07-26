@@ -251,6 +251,7 @@ namespace Rock_Paper_Scissors
                 Console.WriteLine(" ");
                 Console.WriteLine("Congratulations " + playerOne.name + " You are the Winner! Thanks for Playing!");
                 Console.WriteLine(" ");
+                Console.WriteLine("Would you like to play again?");
             }
             else
             {
