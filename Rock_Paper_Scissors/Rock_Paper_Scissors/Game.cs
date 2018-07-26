@@ -172,7 +172,7 @@ namespace Rock_Paper_Scissors
                     Console.WriteLine(" ");
                     Console.WriteLine("Congratulations Player One!");
                     playerOne.score = playerOne.score + 1;
-                    Console.WriteLine("The score is now Player One = " + playerOne.score + " Player Two = " + playerTwo.score + ".");
+                    Console.WriteLine("The score is now " + playerOne.name + " = " + playerOne.score + " " + playerTwo.name + " = " + playerTwo.score + ".");
                     Console.WriteLine(" ");
                     RunRound();
                 }
@@ -181,7 +181,7 @@ namespace Rock_Paper_Scissors
                     Console.WriteLine(" ");
                     Console.WriteLine("Congratulations Player Two!");
                     playerTwo.score = playerTwo.score + 1;
-                    Console.WriteLine("The score is now Player One = " + playerOne.score + " Player Two = " + playerTwo.score + ".");
+                    Console.WriteLine("The score is now " + playerOne.name + " = " + playerOne.score + " " + playerTwo.name + " = " + playerTwo.score + ".");
                     Console.WriteLine(" ");
                     RunRound();
                 }
@@ -189,7 +189,7 @@ namespace Rock_Paper_Scissors
                 {
                     Console.WriteLine(" ");
                     Console.WriteLine("You both drew the same thing! this round is a draw!");
-                    Console.WriteLine("The score is now "  + playerOne.score + " Player Two = " + playerTwo.score + ".");
+                    Console.WriteLine("The score is still " + playerOne.name + " = " + playerOne.score + " " + playerTwo.name + " = " + playerTwo.score + ".");
                     Console.WriteLine(" ");
                     RunRound();
 
