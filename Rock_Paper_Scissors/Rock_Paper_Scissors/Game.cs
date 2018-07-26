@@ -42,6 +42,7 @@ namespace Rock_Paper_Scissors
 
                 playerTwo = new AI();
                 playerTwo.GetPlayerName();
+                playerTwo.StartGame();
             }
             else
             {

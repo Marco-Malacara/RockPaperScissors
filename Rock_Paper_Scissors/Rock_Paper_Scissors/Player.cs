@@ -10,13 +10,18 @@ namespace Rock_Paper_Scissors
     {
         //member variables (HAS A)
         protected string name;
-        protected string playOneChoice;
-        protected string playerTwoThrow;
+        public string playerOneChoice;
+        public string playerTwoChoice;
+        public string playerOneWon;
+        public int playerOneScore;
+        public int playerTwoScore;
 
         //constructor
         public Player()
         {
-
+            playerOneChoice = null;
+            playerTwoChoice = null;
+            playerOneWon = null;
         }
 
         //member methods (CAN DO)
@@ -25,7 +30,7 @@ namespace Rock_Paper_Scissors
             name = "Lerroy Jankins!";
             Console.WriteLine("You're now playing against " + name + ".");
         }
-        public void DisplayListOfGesutres()
+        public virtual void DisplayListOfGesutres()
         {
             List<string> gestures = new List<string>();
             gestures.Add("Rock");
@@ -38,14 +43,47 @@ namespace Rock_Paper_Scissors
             {
                 Console.WriteLine(gesture);
             }
-        }
-        public virtual void PlayerTwoInput()
-        {
-            Console.WriteLine("Player Two's turn!");
+            
         }
         public virtual void StartGame()
         {
             Console.WriteLine("If you're seeing this; the game broke...sorry...");
+        }
+        public void GetWinner()
+        {
+            while (playerOneScore < 2 || playerTwoScore < 2)
+            {
+
+                if (playerOneWon == "won")
+                {
+                    Console.WriteLine(" ");
+                    Console.WriteLine("Congratulations Player One!");
+                    playerOneScore = playerOneScore + 1;
+                    Console.WriteLine("The score is now Player One = " + playerOneScore + " Player Two = " + playerTwoScore + ".");
+                    Console.WriteLine(" ");
+                    StartGame();
+                }
+                else if (playerOneWon == "no")
+                {
+                    Console.WriteLine(" ");
+                    Console.WriteLine("Congratulations Player Two!");
+                    playerTwoScore = playerTwoScore + 1;
+                    Console.WriteLine("The score is now Player One = " + playerOneScore + " Player Two = " + playerTwoScore + ".");
+                    Console.WriteLine(" ");
+                    StartGame();
+                }
+                else
+                {
+                    Console.WriteLine(" ");
+                    Console.WriteLine("You both drew the same thing! this round is a draw!");
+                    playerTwoScore = playerTwoScore + 1;
+                    playerOneScore = playerOneScore + 1;
+                    Console.WriteLine("The score is now Player One = " + playerOneScore + " Player Two = " + playerTwoScore + ".");
+                    Console.WriteLine(" ");
+                    StartGame();
+
+                }
+            }
         }
     }
 }

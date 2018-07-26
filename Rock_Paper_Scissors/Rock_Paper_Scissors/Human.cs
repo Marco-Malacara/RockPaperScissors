@@ -8,36 +8,24 @@ namespace Rock_Paper_Scissors
 {
     class Human : Player
     {
-        //member variables
-        public string playerOneChoice;
-        public string playerTwoChoice;
-        public string playerOneWon;
-        public int playerOneScore;
-        public int playerTwoScore;
-        //member constructor
         public Human()
         {
             playerOneChoice = null;
             playerTwoChoice = null;
             playerOneWon = null;
-            int playerOneScore = 0;
-            int playerTwoScore = 0;
         }
 
-        //member methods
-        public override void GetPlayerName()
-        {
-            Console.WriteLine("What is your name?");
-            name = Console.ReadLine();
-            Console.WriteLine("Welcome " + name + " to the game!");
-        }
+     
         public override void StartGame()
         {
+            Console.WriteLine(" ");
             DisplayListOfGesutres();
             Console.WriteLine("Player One picks first!");
             Console.WriteLine("What would you like to throw?----->");
+            Console.WriteLine(" ");
 
             string playerOneChoice = Console.ReadLine();
+            Console.WriteLine(" ");
 
             DisplayListOfGesutres();
             Console.WriteLine("Player Two's turn");
@@ -140,42 +128,6 @@ namespace Rock_Paper_Scissors
             {
                 Console.WriteLine("The given input is invalid please try again!");
                 StartGame();
-            }
-        }
-        public void GetWinner()
-        {
-            while(playerOneScore < 2 || playerTwoScore <2)
-            {
-                
-                if (playerOneWon == "won")
-                {
-                    Console.WriteLine(" ");
-                    Console.WriteLine("Congratulations Player One!");
-                    playerOneScore = playerOneScore + 1;
-                    Console.WriteLine("The score is now Player One = " + playerOneScore + " Player Two = " + playerTwoScore + ".");
-                    Console.WriteLine(" ");
-                    StartGame();
-                }
-                else if(playerOneWon == "no")
-                {
-                    Console.WriteLine(" ");
-                    Console.WriteLine("Congratulations Player Two!");
-                    playerTwoScore = playerTwoScore + 1;
-                    Console.WriteLine("The score is now Player One = " + playerOneScore + " Player Two = " + playerTwoScore + ".");
-                    Console.WriteLine(" ");
-                    StartGame();
-                }
-                else
-                {
-                    Console.WriteLine(" ");
-                    Console.WriteLine("You both drew the same thing! this round is a draw!");
-                    playerTwoScore = playerTwoScore + 1;
-                    playerOneScore = playerOneScore + 1;
-                    Console.WriteLine("The score is now Player One = " + playerOneScore + " Player Two = " + playerTwoScore + ".");
-                    Console.WriteLine(" ");
-                    StartGame();
-
-                }
             }
         }
     }
