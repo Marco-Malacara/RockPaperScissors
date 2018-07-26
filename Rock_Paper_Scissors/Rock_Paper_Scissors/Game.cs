@@ -197,11 +197,15 @@ namespace Rock_Paper_Scissors
             }
             if (playerOne.score > playerTwo.score)
             {
-                Console.WriteLine("Congratulations Player One! You are the Winner! Thanks for Playing!");
+                Console.WriteLine(" ");
+                Console.WriteLine("Congratulations " + playerOne.name + " You are the Winner! Thanks for Playing!");
+                Console.WriteLine(" ");
             }
             else
             {
-                Console.WriteLine("Congratulations Player Two! You are the Winner! Thanks for Playing!");
+                Console.WriteLine(" ");
+                Console.WriteLine("Congratulations " + playerTwo.name + " You are the Winner! Thanks for Playing!");
+                Console.WriteLine(" ");
             }
         }
     }
