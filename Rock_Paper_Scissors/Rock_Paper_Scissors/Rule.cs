@@ -10,6 +10,7 @@ namespace Rock_Paper_Scissors
     {
         public void DisplayRules()
         {
+            Console.WriteLine(" ");
             Console.WriteLine("Welcome to the Game!");
             Console.WriteLine("The rules are as followed,");
             Console.WriteLine("Rock crushes Scissors!");
@@ -22,6 +23,7 @@ namespace Rock_Paper_Scissors
             Console.WriteLine("Lizard eats Paper!");
             Console.WriteLine("Paper disproves Spock!");
             Console.WriteLine("Spock vaporizes Rock!");
+            Console.WriteLine(" ");
         }
     }
 }

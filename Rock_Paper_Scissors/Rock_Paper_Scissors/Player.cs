@@ -26,16 +26,15 @@ namespace Rock_Paper_Scissors
         public virtual void DisplayListOfGesutres()
         {
             List<string> gestures = new List<string>();
+            Console.WriteLine(" ");
             gestures.Add("Rock");
             gestures.Add("Paper");
             gestures.Add("Scissors");
             gestures.Add("Lizard");
             gestures.Add("Spock");
+            Console.WriteLine(" ");
 
-            foreach (string gesture in gestures)
-            {
-                Console.WriteLine(gesture);
-            }
+            Console.WriteLine(gestures);
             
         }
         public virtual void StartGame()

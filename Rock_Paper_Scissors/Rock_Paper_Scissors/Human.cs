@@ -28,7 +28,6 @@ namespace Rock_Paper_Scissors
             Console.WriteLine(" ");
             choice = Console.ReadLine();
             Console.WriteLine(" ");
-            Console.WriteLine(choice);
         }
     }
 }
