@@ -64,7 +64,7 @@ namespace Rock_Paper_Scissors
             else if (playerOneChoice.ToLower() == "spock" && playerTwoChoice.ToLower() == "rock" || playerTwoChoice.ToLower() == "scissors")
             {
                 Console.WriteLine(" ");
-                Console.WriteLine("PAPER beats " + playerTwoChoice.ToUpper() + "!");
+                Console.WriteLine("SPOCK beats " + playerTwoChoice.ToUpper() + "!");
                 Console.WriteLine(" ");
                 playerOneWon = "won";
                 GetWinner();
@@ -112,7 +112,7 @@ namespace Rock_Paper_Scissors
             else if (playerTwoChoice.ToLower() == "spock" && playerTwoChoice.ToLower() == "rock" || playerTwoChoice.ToLower() == "scissors")
             {
                 Console.WriteLine(" ");
-                Console.WriteLine("PAPER beats " + playerTwoChoice.ToUpper() + "!");
+                Console.WriteLine("SPOCK beats " + playerTwoChoice.ToUpper() + "!");
                 Console.WriteLine(" ");
                 playerOneWon = "no";
                 GetWinner();
@@ -139,10 +139,12 @@ namespace Rock_Paper_Scissors
             {
                 playerTwoChoice = "rock";
                 
+                
             }
             else if (AiChoice == 1)
             {
                 playerTwoChoice = "scissors";
+                
                 
             }
             else if (AiChoice == 2)

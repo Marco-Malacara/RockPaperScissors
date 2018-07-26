@@ -10,9 +10,7 @@ namespace Rock_Paper_Scissors
     {
         public Human()
         {
-            playerOneChoice = null;
-            playerTwoChoice = null;
-            playerOneWon = null;
+         
         }
 
      
