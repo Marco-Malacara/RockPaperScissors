@@ -8,7 +8,7 @@ namespace Rock_Paper_Scissors
 {
     public abstract class Player
     {
-        protected string name;
+        public string name;
         public string choice;
         public int score;
 

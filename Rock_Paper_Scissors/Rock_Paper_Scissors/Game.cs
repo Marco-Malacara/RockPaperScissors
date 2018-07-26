@@ -189,9 +189,7 @@ namespace Rock_Paper_Scissors
                 {
                     Console.WriteLine(" ");
                     Console.WriteLine("You both drew the same thing! this round is a draw!");
-                    playerTwo.score = playerTwo.score + 1;
-                    playerOne.score = playerOne.score + 1;
-                    Console.WriteLine("The score is now Player One = " + playerOne.score + " Player Two = " + playerTwo.score + ".");
+                    Console.WriteLine("The score is now "  + playerOne.score + " Player Two = " + playerTwo.score + ".");
                     Console.WriteLine(" ");
                     RunRound();
 

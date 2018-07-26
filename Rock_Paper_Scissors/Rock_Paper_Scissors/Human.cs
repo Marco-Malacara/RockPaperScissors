@@ -13,6 +13,13 @@ namespace Rock_Paper_Scissors
          
         }
 
+        public override void GetPlayerName()
+        {
+            Console.WriteLine(" ");
+            Console.WriteLine("Please Enter Name:");
+            Console.ReadLine();
+            Console.WriteLine(" ");
+        }
         public override void MakeChoice()
         {
             Console.WriteLine(" ");
