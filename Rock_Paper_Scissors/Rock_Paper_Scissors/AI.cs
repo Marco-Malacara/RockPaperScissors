@@ -42,6 +42,7 @@ namespace Rock_Paper_Scissors
         }
         public override void GetPlayerName()
         {
+            Console.WriteLine(" ");
             base.GetPlayerName();
         }
     }

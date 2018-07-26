@@ -21,12 +21,11 @@ namespace Rock_Paper_Scissors
         public virtual void GetPlayerName()
         {
             name = "Lerroy Jankins!";
-            Console.WriteLine("You're now playing against " + name + ".");
         }
         public virtual void DisplayListOfGesutres()
         {
             List<string> gestures = new List<string>();
-            Console.WriteLine(" ");
+
             gestures.Add("Rock");
             gestures.Add("Paper");
             gestures.Add("Scissors");
@@ -34,7 +33,10 @@ namespace Rock_Paper_Scissors
             gestures.Add("Spock");
             Console.WriteLine(" ");
 
-            Console.WriteLine(gestures);
+            foreach (string gesture in gestures)
+            {
+                Console.WriteLine(gesture);
+            }
             
         }
         public virtual void StartGame()

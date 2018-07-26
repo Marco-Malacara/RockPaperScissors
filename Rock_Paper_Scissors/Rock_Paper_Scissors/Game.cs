@@ -22,51 +22,102 @@ namespace Rock_Paper_Scissors
 
         public void RunRound()
         {
+            Console.WriteLine(playerOne.name);
             playerOne.MakeChoice();
+            Console.WriteLine(playerTwo.name);
             playerTwo.MakeChoice();
             RoundWinner();
         }
 
-        public void SetUpOpponent()
+        public void SelectGameType()
         {
-            Console.WriteLine("Press [1] to play against another Human.");
-            Console.WriteLine("Press [2] to play against an AI.");
+            Console.WriteLine(" ");
+            Console.WriteLine("Press [1] to play SINGLE PLAYER!");
+            Console.WriteLine("Press [2] to play MULTIPLAYER!");
+            Console.WriteLine(" ");
 
             string userChoice = Console.ReadLine();
 
             if (userChoice == "1")
             {
-                Console.WriteLine("You have set up a game against another person! Good luck and have fun!");
+                Console.WriteLine(" ");
+                Console.WriteLine("You have selected single player!");
+                Console.WriteLine("Press [1] to start game!");
+                Console.WriteLine("OR");
+                Console.WriteLine("Press [2] to retrun to Main Menu.");
+                Console.WriteLine(" ");
+                string userInput = Console.ReadLine();
+
+                if (userInput == "1")
+                {
+                    playerTwo = new AI();
+                    playerOne.GetPlayerName();
+                    playerTwo.GetPlayerName();
+                    Console.WriteLine(playerOne.name + " is now playing against " + playerTwo.name + ".");
+                    RunRound();
+                }
+                else if (userInput == "2")
+                {
+                    MainMenu();
+                }
+                else
+                {
+                    Console.WriteLine("Not a valid selection! Please try again!");
+                    SelectGameType();
+                }
+
                 playerTwo = new Human();
                 playerOne.GetPlayerName();
                 playerTwo.GetPlayerName();
                 RunRound();
                 
             }
-            else if(userChoice.ToLower() == "2")
+            else if(userChoice == "2")
             {
+                Console.WriteLine(" ");
+                Console.WriteLine("You have selected MULTIPLAYER!");
+                Console.WriteLine("Press [1] to start game!");
+                Console.WriteLine("OR");
+                Console.WriteLine("Press [2] to retrun to Main Menu.");
+                Console.WriteLine(" ");
+                string userInput = Console.ReadLine();
 
-                playerTwo = new AI();
-                playerTwo.GetPlayerName();
-                RunRound();
+                if (userInput == "1")
+                {
+                    playerTwo = new Human();
+                    playerOne.GetPlayerName();
+                    playerTwo.GetPlayerName();
+                    RunRound();
+                }
+                else if (userInput == "2")
+                {
+                    MainMenu();
+                }
+                else
+                {
+                    Console.WriteLine("Not a valid selection! Please try again!");
+                    SelectGameType();
+                }
             }
             else
             {
                 Console.WriteLine("Sorry that input is not valid please try again!");
-                SetUpOpponent();
+                SelectGameType();
             }
         }
         public void MainMenu()
         {
+            Console.WriteLine(" ");
             Console.WriteLine("Press [1] to choose game!");
             Console.WriteLine("Press [2] to see rules!");
+            Console.WriteLine(" ");
 
             string userInput = Console.ReadLine();
 
             switch (userInput)
             {
                 case "1":
-                    SetUpOpponent();
+                    SelectGameType();
                     break;
                 case "2":
                     rules.DisplayRules();
