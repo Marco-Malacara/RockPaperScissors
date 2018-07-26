@@ -91,6 +91,7 @@ namespace Rock_Paper_Scissors
                 Console.WriteLine("SCISSORS! beats " + playerOneChoice.ToUpper() + "!");
                 Console.WriteLine(" ");
                 playerOneWon = "no";
+                GetWinner();
             }
             else if (playerTwoChoice.ToLower() == "paper" && playerOneChoice.ToLower() == "rock" || playerOneChoice.ToLower() == "spock")
             {
@@ -98,6 +99,7 @@ namespace Rock_Paper_Scissors
                 Console.WriteLine("PAPER! beats " + playerOneChoice.ToUpper() + "!");
                 Console.WriteLine(" ");
                 playerOneWon = "no";
+                GetWinner();
             }
             else if (playerTwoChoice.ToLower() == "lizard" && playerTwoChoice.ToLower() == "paper" || playerOneChoice.ToLower() == "spock")
             {
@@ -105,6 +107,7 @@ namespace Rock_Paper_Scissors
                 Console.WriteLine("LIZARD! beats " + playerTwoChoice.ToUpper() + "!");
                 Console.WriteLine(" ");
                 playerOneWon = "no";
+                GetWinner();
             }
             else if (playerTwoChoice.ToLower() == "spock" && playerTwoChoice.ToLower() == "rock" || playerTwoChoice.ToLower() == "scissors")
             {
@@ -112,6 +115,7 @@ namespace Rock_Paper_Scissors
                 Console.WriteLine("PAPER beats " + playerTwoChoice.ToUpper() + "!");
                 Console.WriteLine(" ");
                 playerOneWon = "no";
+                GetWinner();
             }
             else if (playerOneChoice == playerTwoChoice)
             {
@@ -119,6 +123,7 @@ namespace Rock_Paper_Scissors
                 Console.WriteLine("You both threw " + playerOneChoice.ToUpper() + "! This round is a draw!");
                 Console.WriteLine(" ");
                 playerOneWon = "draw";
+                GetWinner();
             }
             else
             {
@@ -129,31 +134,31 @@ namespace Rock_Paper_Scissors
         public void ComputerChoice()
         {
             Random rnd = new Random();
-            int AiChoice = rnd.Next(1,2);
+            int AiChoice = rnd.Next(4);
             if (AiChoice == 0)
             {
                 playerTwoChoice = "rock";
-                GetWinner();
+                
             }
             else if (AiChoice == 1)
             {
                 playerTwoChoice = "scissors";
-                GetWinner();
+                
             }
             else if (AiChoice == 2)
             {
                 playerTwoChoice = "paper";
-                GetWinner();
+                
             }
             else if (AiChoice == 3)
             {
                 playerTwoChoice = "lizard";
-                GetWinner();
+                
             }
             else if (AiChoice == 4)
             {
                 playerTwoChoice = "spock";
-                GetWinner();
+                
             }
 
         }
